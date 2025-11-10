@@ -1,0 +1,52 @@
+Name:             nginx-pod
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             kind-worker2/172.18.0.4
+Start Time:       Mon, 10 Nov 2025 16:30:07 +0545
+Labels:           run=nginx-pod
+Annotations:      <none>
+Status:           Running
+IP:               10.244.1.3
+IPs:
+  IP:  10.244.1.3
+Containers:
+  nginx-pod:
+    Container ID:   containerd://fbd58d078d83291fb5145313d8ff52d2e9aa027ba1aec7c8b64660a321c05368
+    Image:          nginx
+    Image ID:       docker.io/library/nginx@sha256:1beed3ca46acebe9d3fb62e9067f03d05d5bfa97a00f30938a0a3580563272ad
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Mon, 10 Nov 2025 16:30:11 +0545
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-mczgm (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True 
+  Initialized                 True 
+  Ready                       True 
+  ContainersReady             True 
+  PodScheduled                True 
+Volumes:
+  kube-api-access-mczgm:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  44s   default-scheduler  Successfully assigned default/nginx-pod to kind-worker2
+  Normal  Pulling    43s   kubelet            Pulling image "nginx"
+  Normal  Pulled     41s   kubelet            Successfully pulled image "nginx" in 2.786s (2.786s including waiting). Image size: 59774010 bytes.
+  Normal  Created    41s   kubelet            Created container: nginx-pod
+  Normal  Started    40s   kubelet            Started container nginx-pod
