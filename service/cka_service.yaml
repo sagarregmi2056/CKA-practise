@@ -1,23 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
-
 metadata:
   labels:
-    app: busybox-deployment
-  name: busybox-deployment
+    app: mydeployment
+  name: mydeployment
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
-      app: busybox-deployment
+      app: mydeployment
   strategy: {}
   template:
     metadata:
       labels:
-        app: busybox-deployment
+        app: mydeployment
     spec:
       containers:
-      - image: busybox
-        name: busybox
+      - image: nginx
+        name: nginx
         resources: {}
 status: {}
