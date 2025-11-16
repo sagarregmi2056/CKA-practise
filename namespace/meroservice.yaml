@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: merodeployment
+  name: meroservice
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: merodeployment
+  type: NodePort
+status:
+  loadBalancer: {}

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: merodeployment
+  name: merodeployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: merodeployment
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: merodeployment
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}
+status: {}

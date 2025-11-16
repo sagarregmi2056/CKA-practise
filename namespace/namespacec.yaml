@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  creationTimestamp: "2025-11-16T04:42:25Z"
+  labels:
+    kubernetes.io/metadata.name: namespacec
+  name: namespacec
+  resourceVersion: "20117"
+  uid: 6dac8669-14d5-495d-94da-fb9fdff8a90c
+spec:
+  finalizers:
+  - kubernetes
+status:
+  phase: Active
